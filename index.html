@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eGrader Pro</title>
+    <script>
+        const messages = [
+    "Extrapolating piton angle",
+    "Reverse engineering social influence",
+    "Balancing sponsorship weightings",
+    "Retrofitting UKC beta duster",
+    "Spelling thesaurus",
+    "Consulting ChatGPT",
+    "Creating UKB thread",
+    "Frothing bilateral crimp analyser",
+    "Short roping the Markov reward function",
+    "Accounting for lattice inflation",
+    "Conforming dry-skin sympathiser",
+    "Conforming wet-skin sympathiser",
+    "Conforming thin-skin sympathiser",
+    "Conforming skin sympathiser",
+    "Starting excuse engine",
+    "Excuse engine has exceeded memory allocation",
+    "Excuse engine has crashed",
+    "Abandoning excuse engine",
+    "Washing nuts",
+    "Scrubbing cracks",
+    "Searching for friends",
+    "Calculating the echo of the move",
+    "Stopping for McDonalds",
+    "Lapping Keen Roof",
+    "Pretensioning the ",
+    "Installing Mcaffie"
+];
+
+const stepCount = 6;
+let step = 0;
+
+function runModel()
+{
+    document.getElementById("message").classList.remove("hidden");
+
+    stepCalculation();
+    step++;
+
+    setTimeout(() => {
+        if (step >= stepCount)
+        {
+            completeCalculation();
+            return;
+        }
+
+        runModel();
+    }, 750);
+}
+
+function completeCalculation()
+{
+    document.getElementById("message").innerHTML = "...";
+    
+    setTimeout(() => {
+        let grade = Math.floor(Math.random() * 24);
+        document.getElementById("message").innerHTML = "Overall E Grade: Soft E" + grade;
+    }, 2000);
+}
+
+function stepCalculation()
+{
+    let statusIndex = Math.floor(Math.random() * messages.length);
+    let statusMessage = messages[statusIndex];
+    document.getElementById("message").innerHTML = statusMessage;
+}
+    </script>
+    <style>
+        body {
+            background-image: url("RockClimber.3aeb97b7.jpeg");
+            background-size: cover;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-position: 100% 0;
+            z-index: -1;
+            background-color: rgb(149, 4, 4);
+            background-blend-mode: multiply;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .hidden
+        {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <img src="Capture.PNG" width=100/>
+    <h1>The eGrader Pro Plus Ultra 2 Converter</h1>
+    <p>Enter the following information to gain an impression of the E Grade of your recent climbs.</p>
+    <h2>Difficulty</h2>
+    <select id="diff">
+        <option value="1">-</option>
+        <option value="2">Green</option>
+        <option value="2">White</option>
+        <option value="2">Blue</option>
+        <option value="2">Black</option>
+        <option value="2">Red</option>
+        <option value="2">Purple</option>
+        <option value="2">Yellow</option>
+        <option value="2">Orange</option>
+    </select>
+    <h2>Sketch</h2>
+    <select>
+        <option value="1">-</option>
+        <option value="2">Breezy</option>
+        <option value="2">Oo er</option>
+        <option value="2">Bit loose</option>
+        <option value="2">Icy staircase</option>
+        <option value="2">Shittin' me self</option>
+        <option value="2">Wet grass</option>
+    </select>
+    <h2>Do pads make the route safer?</h2>
+    <button>YES</button>
+    <br/>
+    <br/>
+    <button onclick="runModel()">CONVERT GRADE</button>
+    <br/>
+    <a href="/">START OVER</a>
+    <h1 class="hidden" id="message">Calculating grade...</h1>
+
+    <a style="text-decoration: underline;" href="https://egrader.co.uk/">Previous eGrader</a>
+</body>
+</html>
